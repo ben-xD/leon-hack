@@ -57,6 +57,9 @@ const RestaurantWaste: React.FC<Props> = () => {
 
   return (
     <div className=''>
+      <Typography variant='h3'>
+        Total meals wasted today: 23 (£400.29)
+      </Typography>
       {!mealIndex ? (
         <>
           <Typography variant='h5'>Meals</Typography>
@@ -71,6 +74,7 @@ const RestaurantWaste: React.FC<Props> = () => {
           return (
             <ListItem
               className={classes.root}
+              key={index}
               onClick={() => setMealIndex(mealName)}
               button
             >

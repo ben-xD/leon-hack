@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { VictoryBar, VictoryChart, VictoryAxis } from 'victory';
-import { Typography, Button } from '@material-ui/core';
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryStack } from 'victory';
+import { Typography } from '@material-ui/core';
 
 interface Props {
   meal: any;
@@ -8,6 +8,7 @@ interface Props {
 
 const WasteChart: React.FC<Props> = ({ meal }) => {
   const [pastWeekWaste, setPastWeekWaste] = useState<any>([]);
+  const [pastWeekSold, setPastWeekSold] = useState<any>([]);
   console.log({ meal });
 
   useEffect(() => {
@@ -18,7 +19,14 @@ const WasteChart: React.FC<Props> = ({ meal }) => {
           Meals: waste
         }))
       );
+      setPastWeekSold(
+        meal.pastWeekSold.map((waste: any, i: number) => ({
+          'days ago': i + 1,
+          Meals: waste
+        }))
+      );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [meal]);
 
   return (
@@ -29,8 +37,18 @@ const WasteChart: React.FC<Props> = ({ meal }) => {
         animate={{ duration: 2000, easing: 'bounce' }}
       >
         <VictoryAxis tickValues={['6', '5', '4', '3', '2', '1', 'today']} />
-        <VictoryAxis dependentAxis />
-        <VictoryBar data={pastWeekWaste} x={'days ago'} y={'Meals'} />
+        <VictoryAxis dependentAxis label='Meals wasted' />
+        <VictoryAxis label='days ago' />
+        <VictoryBar data={pastWeekWaste} x='days ago' y='Meals' />
+      </VictoryChart>
+      <VictoryChart
+        domainPadding={10}
+        animate={{ duration: 2000, easing: 'bounce' }}
+      >
+        <VictoryAxis tickValues={['6', '5', '4', '3', '2', '1', 'today']} />
+        <VictoryAxis dependentAxis label='Meals sold' />
+        <VictoryAxis label='days ago' />
+        <VictoryBar data={pastWeekSold} x='days ago' y='Meals' />
       </VictoryChart>
     </div>
   );
