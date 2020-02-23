@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, send
-# from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -11,7 +10,13 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 @app.route('/')
 def index():
     print("Emitting on waste channel")
-    socketio.emit('waste', {'data': 42})
+    socketio.emit('waste',
+                  {
+                      'Lentil Masala': {
+                          'name': 'Lentil Masala',
+                          'todaysWaste': 5
+                      }
+                  })
     return "INDEX"
     # return render_template('index.html')
 
