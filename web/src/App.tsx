@@ -29,8 +29,8 @@ function App() {
           <Navbar />
           <Container maxWidth='md'>
             <Switch>
-              <Route exact path='/' component={Home}></Route>
-              <Route exact path='/dashboard' component={Dashboard}></Route>
+              <Route exact path='/' component={Dashboard}></Route>
+              <Route exact path='/Dashboard' component={Dashboard}></Route>
             </Switch>
           </Container>
         </Router>
