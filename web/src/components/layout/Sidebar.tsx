@@ -1,11 +1,12 @@
 import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemText, Typography } from '@material-ui/core';
 
 interface Props {}
 
 const Sidebar: React.FC<Props> = () => {
   return (
     <div className=''>
+      <Typography variant='h5'>Branch</Typography>
       <List component='nav' aria-label='main mailbox folders'>
         <ListItem button>
           <ListItemText primary='Nearest' />

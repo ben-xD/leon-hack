@@ -2,19 +2,28 @@ const mockData = {
   meals: {
     'Vegan Chipotle Burger': {
       name: 'Vegan Chipotle Burger',
-      todaysWaste: 16
+      pastWeekWaste: [5, 5, 4, 10, 4, 5, 2],
+      pastWeekSold: [200, 220, 205, 195, 180, 0, 400]
     },
     'JACK Wings': {
       name: 'JACK Wings',
-      todaysWaste: 3
+      pastWeekWaste: [1, 2, 2, 3, 3, 1, 10],
+      pastWeekSold: [200, 220, 205, 195, 180, 0, 400]
     },
     'Love Burger': {
       name: 'Love Burger',
-      todaysWaste: 5
+      pastWeekWaste: [1, 5, 4, 8, 2, 4, 3],
+      pastWeekSold: [200, 220, 205, 195, 180, 0, 400]
     },
     'Chilli Con Carne': {
       name: 'Chilli Con Carne',
-      todaysWaste: 2
+      pastWeekWaste: [0, 1, 3, 6, 10, 12, 2],
+      pastWeekSold: [200, 220, 205, 195, 180, 0, 400]
+    },
+    'Lentil Masala': {
+      name: 'Lentil Masala',
+      pastWeekWaste: [0, 1, 3, 6, 10, 12, 2],
+      pastWeekSold: [200, 220, 205, 195, 180, 0, 400]
     }
   }
 };
