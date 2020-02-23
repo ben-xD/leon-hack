@@ -11,8 +11,8 @@ def emit_message(value,totalsold):
             {
                 'Lentil Masala': {
                     'name': 'Lentil Masala',
-                    'todaysWaste': value,
-                    'todaysSales': totalsold
+                    'pastWeekWaste':  [0, 1, 3, 6, 10, 12, 4, value],
+                    'pastWeekSold': [200, 220, 205, 195, 180, 0, 400, totalsold]
                 }
             })
     print("Sent")
