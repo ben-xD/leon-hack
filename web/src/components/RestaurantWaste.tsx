@@ -55,10 +55,19 @@ const RestaurantWaste: React.FC<Props> = () => {
     });
   };
 
+  const mealsWasted = Object.entries(meals)
+    .map(
+      ([mealName, meal]: [string, any]) =>
+        meal.pastWeekWaste[meal.pastWeekWaste.length - 1]
+    )
+    .reduce((a, b) => a + b, 0);
+
+  const valueWasted = mealsWasted * 7;
+
   return (
     <div className=''>
-      <Typography variant='h3'>
-        Total meals wasted today: 23 (£400.29)
+      <Typography variant='h5'>
+        {`Total meals wasted today: ${mealsWasted} (~£${valueWasted})`}
       </Typography>
       {!mealIndex ? (
         <>
