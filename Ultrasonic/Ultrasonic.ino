@@ -86,6 +86,19 @@ void loop()
     if (throwaway == 0){
       Serial.println("Picked up");
     }
+    else 
+    {
+      if (cm < 5)
+      {
+        display.showNumberDec(2);
+      }
+      else if (cm < 20){
+        display.showNumberDec(1);
+      }
+      else {
+        display.showNumberDec(0);
+      }
+    }
     throwaway = 0;
     demand = 2;
     thrown = false;

@@ -11,8 +11,8 @@ def emit_message(value,totalsold):
             {
                 'Lentil Masala': {
                     'name': 'Lentil Masala',
-                    'pastWeekWaste':  [0, 1, 3, 6, 10, 12, 4, value],
-                    'pastWeekSold': [200, 220, 205, 195, 180, 0, 400, totalsold]
+                    'pastWeekWaste':  [0, 1, 3, 6, 10, 12, value],
+                    'pastWeekSold': [200, 220, 205, 195, 180, 0, totalsold]
                 }
             })
     print("Sent")
@@ -20,8 +20,8 @@ def emit_message(value,totalsold):
 
 
 ser = serial.Serial("COM8", 9600)
-totalwaste = 0
-totalsold = 0
+totalwaste = 4
+totalsold = 400 
 while True:
     cc=str(ser.readline())[2:][:-5]
     if cc == "1" or cc == "2":
