@@ -23,7 +23,7 @@ const mockData = {
     'Lentil Masala': {
       name: 'Lentil Masala',
       pastWeekWaste: [0, 1, 3, 6, 10, 12, 2],
-      pastWeekSold: [200, 220, 205, 195, 180, 240, 400]
+      pastWeekSold: [200, 220, 205, 195, 180, 400, 0]
     }
   }
 };

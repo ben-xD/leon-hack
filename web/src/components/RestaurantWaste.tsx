@@ -5,8 +5,7 @@ import {
   ListItem,
   ListItemText,
   makeStyles,
-  createStyles,
-  Button
+  createStyles
 } from '@material-ui/core';
 import mockData from '../mockData';
 import io from 'socket.io-client';
@@ -37,11 +36,15 @@ const RestaurantWaste: React.FC<Props> = () => {
       console.log({ socket });
       setMeals({
         ...meals,
-        name: socket
+        ...socket
       });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    console.log({ meals });
+  }, [meals]);
 
   const incrementChipotle = () => {
     console.log('incrementing');

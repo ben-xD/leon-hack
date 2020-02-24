@@ -17,17 +17,17 @@ def handle_message(message):
     socketio.emit('waste', message)
 
 
-@app.route('/')
-def index():
-    print("Emitting on waste channel")
-    socketio.emit('waste',
-                  {
-                      'Lentil Masala': {
-                          'name': 'Lentil Masala',
-                          'todaysWaste': 5
-                      }
-                  })
-    return "INDEX"
+# @app.route('/')
+# def index():
+#     print("Emitting on waste channel")
+#     socketio.emit('waste',
+#                   {
+#                       'Lentil Masala': {
+#                           'name': 'Lentil Masala',
+#                           'todaysWaste': 5
+#                       }
+#                   })
+#     return "INDEX"
 
 
 if __name__ == '__main__':
